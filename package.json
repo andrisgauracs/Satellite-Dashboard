@@ -1,0 +1,17 @@
+{
+  "name": "space-api-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.18.0",
+    "node-fetch": "^2.6.7"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

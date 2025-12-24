@@ -1,0 +1,182 @@
+:root {
+  --bg: #071133;
+  --panel: #0c2046;
+  --accent: #1cc6d1;
+  --muted: #9fb0d6;
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto,
+    "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg), #08102a);
+  color: var(--muted);
+}
+header {
+  padding: 14px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+h1 {
+  margin: 0;
+  font-size: 18px;
+  color: white;
+}
+main {
+  display: flex;
+  gap: 18px;
+  padding: 18px;
+}
+aside {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.panel {
+  background: var(--panel);
+  padding: 14px;
+  border-radius: 8px;
+}
+.panel.small {
+  font-size: 13px;
+}
+.panel.debug {
+  max-height: 20vh;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.5);
+  color: #dfefff;
+  font-family: monospace;
+  font-size: 12px;
+  padding: 8px;
+  margin-top: 8px;
+  white-space: pre-wrap;
+}
+#sat-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 54vh;
+  overflow: auto;
+}
+#sat-list li {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.map-panel {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+canvas {
+  background: linear-gradient(180deg, #0b1a3a, #071133);
+  border-radius: 8px;
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.6);
+}
+#legend {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+button {
+  background: var(--accent);
+  border: 0;
+  color: #012;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+label {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+#status {
+  font-size: 13px;
+  color: var(--muted);
+}
+.svg-map {
+  flex: 1;
+  min-height: 420px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #06102a, #021020);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SVG should scale responsively */
+.svg-map svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Satellite markers and labels */
+.sat-marker {
+  stroke: #0008;
+  stroke-width: 0.8px;
+  cursor: default;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
+  transition: r 200ms ease, transform 200ms ease;
+}
+.sat-label {
+  fill: #fff;
+  font-size: 12px;
+  font-family: system-ui, sans-serif;
+  pointer-events: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+.sat-marker.iss {
+  fill: #2aa6ff;
+}
+.sat-marker.starlink {
+  fill: #6df0e8;
+}
+.three-map {
+  /* center the renderer canvas */
+  flex: 1;
+  min-height: 420px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #06102a, #021020);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: grab; /* show grab */
+}
+
+.three-map.canvas-dragging {
+  cursor: grabbing;
+}
+
+/* canvas inserted by three.js */
+.three-map canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+/* small status overlay on the three map */
+#three-container .overlay {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 2;
+}

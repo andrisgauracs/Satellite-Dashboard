@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Space Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Space Dashboard — ISS & Starlink</h1>
+      <div id="status">Connecting…</div>
+    </header>
+    <main>
+      <aside>
+        <section class="panel">
+          <h2>Satellites</h2>
+          <ul id="sat-list"></ul>
+        </section>
+        <section class="panel small">
+          <button id="refresh" type="button">Refresh Now</button>
+        </section>
+      </aside>
+      <section class="map-panel">
+        <div id="three-container" class="three-map" aria-hidden="false">
+          Loading 3D globe…
+        </div>
+        <div id="legend">Blue: ISS, Cyan: Starlink</div>
+        <!-- debug panel to show raw responses from /api/positions -->
+        <pre id="debug" class="panel debug" style="display: none"></pre>
+      </section>
+    </main>
+    <!-- load three.js and OrbitControls helper (ensures THREE.OrbitControls is attached) BEFORE app.js -->
+    <script
+      src="https://unpkg.com/three@0.151.3/build/three.min.js"
+      defer
+    ></script>
+    <script type="module" src="three-orbit-controls.js" defer></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
