@@ -1,5 +1,7 @@
 # Space API — Satellite Visualizer
 
+![sample](https://github.com/user-attachments/assets/da9593aa-feae-4875-b37b-effac6d45723)
+
 A small, self-contained Node.js project that provides a backend API to fetch satellite positions (powered by the N2YO API) and a frontend that visualizes those satellites on an interactive Three.js globe.
 
 ## 🚀 Project overview
