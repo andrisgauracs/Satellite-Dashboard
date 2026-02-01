@@ -4,6 +4,11 @@
 
 A small, self-contained Node.js project that provides a backend API to fetch satellite positions (powered by the N2YO API) and a frontend that visualizes those satellites on an interactive Three.js globe.
 
+> **This project is part of the Raptor Mini AI Model Review video:**
+> [https://youtu.be/lYCma3E1zdk](https://youtu.be/lYCma3E1zdk)
+
+https://youtu.be/KvOYDevFGiw
+
 ## 🚀 Project overview
 
 - **Backend**: Express server (in `src/server.js`) that exposes endpoints for the satellite list and live positions. Fetches data from the N2YO API and provides a small cache + debug information.
